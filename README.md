@@ -113,3 +113,141 @@ Clone the repository:
 ```bash
 git clone https://github.com/YOURUSERNAME/secbuddy.git
 cd secbuddy
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv .venv
+```
+
+Activate it.
+
+Mac / Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Windows:
+
+```bash
+.venv\Scripts\activate
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# Configuration
+
+Copy the environment template:
+
+```bash
+cp .env.example .env
+```
+
+Add your AbuseIPDB API key:
+
+```
+ABUSEIPDB_API_KEY=your_api_key_here
+```
+
+You can obtain a free API key from:
+
+https://abuseipdb.com
+
+---
+
+# Running SecBuddy
+
+Start the application with:
+
+```bash
+streamlit run app.py
+```
+
+Your browser will open the application automatically.
+
+---
+
+# Example Alert
+
+Paste the following alert into the triage console:
+
+```
+Alert Name: Suspicious SSH Brute Force
+
+Source IP: 185.220.101.45
+Destination Host: prod-linux-web01
+Port: 22
+
+Description:
+Multiple failed SSH authentication attempts detected.
+
+Log:
+Mar 16 14:21:01 sshd: Failed password for root from 185.220.101.45
+```
+
+SecBuddy will:
+
+- extract the IP address
+- query AbuseIPDB
+- display investigation guidance
+
+---
+
+# Project Structure
+
+```
+secbuddy/
+│
+├── app.py
+├── requirements.txt
+├── .env.example
+│
+├── data/
+│   └── usecases.json
+│
+├── modules/
+│   ├── alert_parser.py
+│   ├── enrichment.py
+│   ├── playbook_engine.py
+│
+└── admin/
+    └── admin_portal.py
+```
+
+---
+
+# Roadmap
+
+Planned improvements:
+
+- VirusTotal integration
+- GreyNoise enrichment
+- AI alert summarization
+- automatic indicator extraction improvements
+- automated playbook execution
+- case history database
+- multi-user authentication
+- SOC analytics dashboard
+- SIEM integrations (Splunk, Sentinel)
+
+---
+
+# Disclaimer
+
+This project is a prototype intended for educational and research purposes. It is not intended to replace enterprise SOAR platforms.
+
+---
+
+# Author
+
+Sean Duchstein  
+Security Analyst  
+Automation + AI in Cybersecurity
