@@ -111,7 +111,7 @@ These notes can be copied directly into ticketing or incident systems.
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOURUSERNAME/secbuddy.git
+git clone https://github.com/s1l3nced1/secbuddy.git
 cd secbuddy
 ```
 
