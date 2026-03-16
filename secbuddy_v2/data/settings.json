@@ -1,0 +1,10 @@
+{
+  "app_name": "SecBuddy",
+  "allowed_skip_reasons": [
+    "False positive",
+    "Expected activity",
+    "User confirmed legitimate",
+    "No malicious evidence found",
+    "Benign admin activity"
+  ]
+}
